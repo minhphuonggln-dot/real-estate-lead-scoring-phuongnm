@@ -1,31 +1,30 @@
+# pyrefly: ignore [missing-import]
 import streamlit as st
 import pandas as pd
 import json
 import io
-from openai import OpenAI
 
 # ==========================================
 # CẤU HÌNH TRANG STREAMLIT
 # ==========================================
 st.set_page_config(page_title="Lead Scoring Web App", page_icon="🎯", layout="wide")
 
-st.title("🎯 AI Lead Scoring & Automation - Ngành Bất Động Sản")
+st.title("🎯 LEAD SCORING AUTOMATION (PYTHON ONLY)")
 st.markdown("""
-Ứng dụng sử dụng AI để tự động đọc thông tin khách hàng từ Google Sheets, 
-chấm điểm tiềm năng (Lead Scoring) dựa trên bộ quy tắc nghiệp vụ và cho phép kiểm duyệt trước khi xuất file.
+Ứng dụng sử dụng **Quy tắc Python** để tự động đọc thông tin khách hàng từ Google Sheets, 
+chấm điểm tiềm năng (Lead Scoring) dựa trên bộ quy tắc nghiệp vụ. 
+**Không yêu cầu OpenAI API Key.**
 """)
 
 # ==========================================
-# HÀM XỬ LÝ DỮ LIỆU & AI
+# HÀM XỬ LÝ DỮ LIỆU & CHẤM ĐIỂM (PYTHON RULES)
 # ==========================================
 def get_sheet_csv_url(sheet_url):
     """Chuyển đổi link Google Sheet thông thường sang link tải CSV (yêu cầu Sheet được share Public)"""
     if "export?format=csv" in sheet_url:
         return sheet_url
     try:
-        # Lấy ID của sheet
         sheet_id = sheet_url.split("/d/")[1].split("/")[0]
-        # Lấy gid nếu có
         gid = "0"
         if "gid=" in sheet_url:
             gid = sheet_url.split("gid=")[1].split("&")[0]
@@ -33,70 +32,81 @@ def get_sheet_csv_url(sheet_url):
     except Exception as e:
         return sheet_url
 
-def score_lead_with_ai(client, nhu_cau):
-    """Gọi OpenAI API để chấm điểm lead dựa trên rule"""
-    prompt = f"""
-    Bạn là một chuyên gia Data Analyst & Lead Scorer trong ngành Bất Động Sản.
-    Nhiệm vụ: Chấm điểm khách hàng tiềm năng dựa trên thông tin "Nhu cầu" của họ. Điểm gốc là 0.
-
-    QUY TẮC CHẤM ĐIỂM:
-    1. CỘNG 50 ĐIỂM (KHÁCH VIP): 
-       - Ngân sách >= 20 tỷ, tài chính mạnh, không thành vấn đề.
-       - Tìm: Biệt thự đơn lập, Penthouse, Shophouse mặt đường lớn, Quỹ đất công nghiệp, Sàn văn phòng diện tích lớn.
-       - Vị trí: Quận 1, Ven sông, Vinhomes Ocean Park, Phú Mỹ Hưng.
-       - Khách là: Chủ doanh nghiệp, Nhà đầu tư chuyên nghiệp, Mua sỉ, Mua số lượng lớn.
-       - Yêu cầu: Pháp lý chuẩn 100%, Sổ hồng riêng, Muốn gặp trực tiếp chủ đầu tư để đàm phán.
+def score_lead_rule_based(nhu_cau):
+    """Chấm điểm lead dựa trên bộ quy tắc nghiệp vụ (Python logic)"""
+    if not nhu_cau or pd.isna(nhu_cau):
+        return 0, "WARM", "Không có dữ liệu nhu cầu"
+        
+    nhu_cau_lower = str(nhu_cau).lower()
+    score = 0
+    reasons = []
     
-    2. TRỪ 50 ĐIỂM (KHÁCH RÁC):
-       - Yêu cầu phi thực tế (VD: Nhà Quận 1 giá 1-2 tỷ, biệt thự trung tâm vài trăm triệu).
-       - Không có nhu cầu (Nhầm số, dữ liệu cũ, nhầm ngành).
-       - Không thiện chí (Hỏi giá cho vui, chưa có ý định mua, thái độ không hợp tác).
-       - Spam/Quảng cáo (Bảo hiểm, Vay vốn, Mời chào dịch vụ).
-       - Liên lạc lỗi (Thuê bao, không bắt máy, không phản hồi Zalo).
+    # 1. TIÊU CHÍ CỘNG 50 ĐIỂM (KHÁCH VIP)
+    vip_keywords = [
+        "20 tỷ", "tài chính mạnh", "không thành vấn đề", 
+        "biệt thự đơn lập", "penthouse", "shophouse mặt đường", "đất công nghiệp", "sàn văn phòng",
+        "quận 1", "ven sông", "vinhomes ocean park", "phú mỹ hưng",
+        "chủ doanh nghiệp", "nhà đầu tư chuyên nghiệp", "mua sỉ", "mua số lượng lớn",
+        "pháp lý chuẩn", "sổ hồng riêng", "gặp trực tiếp chủ đầu tư"
+    ]
     
-    3. GIỮ NGUYÊN HOẶC CỘNG ÍT ĐIỂM (Các trường hợp khác):
-       - Khách tìm chung cư, nhà phố 3-10 tỷ (Cộng 10 điểm).
-       - Khách cần vay ngân hàng (Cộng 5 điểm).
-       - Nhu cầu thực nhưng cần tư vấn thêm (Cộng 5 điểm).
+    found_vip = [kw for kw in vip_keywords if kw in nhu_cau_lower]
+    if found_vip:
+        score += 50
+        reasons.append(f"VIP: {', '.join(found_vip)}")
 
-    PHÂN LOẠI:
-    - HOT / VIP: Điểm >= 50
-    - WARM: Điểm từ 0 đến < 50
-    - JUNK / DEAD: Điểm < 0
+    # 2. TIÊU CHÍ TRỪ 50 ĐIỂM (KHÁCH RÁC)
+    junk_keywords = [
+        "nhầm số", "không có nhu cầu", "dữ liệu cũ", "nhầm ngành", 
+        "hỏi giá cho vui", "chưa có ý định mua", "thái độ không hợp tác",
+        "bảo hiểm", "vay vốn", "mời chào dịch vụ",
+        "thuê bao", "không bắt máy", "không phản hồi zalo"
+    ]
+    
+    # Kiểm tra yêu cầu phi thực tế (VD: Quận 1 giá rẻ)
+    unrealistic = False
+    if ("quận 1" in nhu_cau_lower or "q1" in nhu_cau_lower) and ("1 tỷ" in nhu_cau_lower or "2 tỷ" in nhu_cau_lower or "vài trăm triệu" in nhu_cau_lower):
+        unrealistic = True
+        reasons.append("Yêu cầu phi thực tế (Q1 giá rẻ)")
 
-    Nhu cầu của khách hàng hiện tại: "{nhu_cau}"
+    found_junk = [kw for kw in junk_keywords if kw in nhu_cau_lower]
+    if found_junk or unrealistic:
+        score -= 50
+        if found_junk:
+            reasons.append(f"JUNK: {', '.join(found_junk)}")
+        
+    # 3. TRƯỜNG HỢP KHÁC
+    if score == 0:
+        warm_keywords = ["chung cư", "nhà phố", "3-10 tỷ", "vay ngân hàng", "tư vấn"]
+        found_warm = [kw for kw in warm_keywords if kw in nhu_cau_lower]
+        if found_warm:
+            score += 10
+            reasons.append(f"Tiềm năng: {', '.join(found_warm)}")
+        else:
+            reasons.append("Nhu cầu thông thường")
 
-    Trả về định dạng JSON thuần túy (không bọc trong markdown) với cấu trúc sau:
-    {{
-        "score": (số nguyên),
-        "category": "VIP" hoặc "WARM" hoặc "JUNK",
-        "reason": "Lý do cộng/trừ điểm chi tiết dựa trên từ khóa nào"
-    }}
-    """
-    try:
-        response = client.chat.completions.create(
-            model="gpt-3.5-turbo", # Hoặc gpt-4o
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0,
-            response_format={ "type": "json_object" }
-        )
-        result = json.loads(response.choices[0].message.content)
-        return result.get("score", 0), result.get("category", "WARM"), result.get("reason", "Không xác định")
-    except Exception as e:
-        return 0, "ERROR", str(e)
+    # Phân loại
+    category = "WARM"
+    if score >= 50:
+        category = "VIP"
+    elif score < 0:
+        category = "JUNK"
+        
+    return score, category, " | ".join(reasons)
 
 
 # ==========================================
 # SIDEBAR: CẤU HÌNH
 # ==========================================
 with st.sidebar:
-    st.header("⚙️ Cấu Hình Hệ Thống")
-    api_key = st.text_input("OpenAI API Key", type="password", help="Nhập API key của OpenAI để sử dụng AI")
+    st.header("⚙️ Cấu Hình")
+    st.success("Hệ thống đang chạy bằng quy tắc Python trực tiếp.")
     
     default_sheet = "https://docs.google.com/spreadsheets/d/1shHeQX2HyHIo8VDgtS7ac3hpvzaIV9xLxDDaV3yLoxQ/edit?gid=0#gid=0"
     sheet_link = st.text_input("Google Sheet Link (Public)", value=default_sheet)
     
-    col_name = st.text_input("Tên cột chứa Nhu cầu/Mô tả", value="Nhu cầu")
+    # Tự động gợi ý tên cột nhu_cau_mo_ta từ screenshot
+    col_name = st.text_input("Tên cột chứa Nhu cầu", value="nhu_cau_mo_ta")
     
     load_btn = st.button("📥 Tải Dữ Liệu")
 
@@ -117,73 +127,64 @@ if load_btn:
             st.session_state.df = df
             st.success("✅ Tải dữ liệu thành công!")
         except Exception as e:
-            st.error(f"Lỗi tải dữ liệu: Đảm bảo link sheet là Public (Bất kỳ ai có đường liên kết đều có thể xem). Chi tiết lỗi: {e}")
+            st.error(f"Lỗi tải dữ liệu: Đảm bảo link sheet là Public. Chi tiết lỗi: {e}")
 
 # 2. Hiển thị & Chấm điểm
 if st.session_state.df is not None:
     df = st.session_state.df
     
     st.subheader("📊 Dữ liệu khách hàng")
-    st.dataframe(df.head(10)) # Hiển thị một số dòng đầu
+    st.dataframe(df)
     
-    if st.button("🚀 Chạy AI Lead Scoring", type="primary"):
-        if not api_key:
-            st.warning("Vui lòng nhập OpenAI API Key ở Sidebar trước khi chạy AI.")
-        elif col_name not in df.columns:
-            st.error(f"Không tìm thấy cột '{col_name}' trong dữ liệu. Các cột hiện có: {', '.join(df.columns)}")
+    if st.button("🚀 Bắt đầu Chấm Điểm", type="primary"):
+        if col_name not in df.columns:
+            st.error(f"Không tìm thấy cột '{col_name}' trong dữ liệu. Các cột hiện có: {', '.join(df.columns)}. Vui lòng nhập đúng tên cột vào Sidebar.")
         else:
-            client = OpenAI(api_key=api_key)
-            
             # Khởi tạo cột mới nếu chưa có
             if 'Điểm Số' not in df.columns:
                 df['Điểm Số'] = 0
                 df['Phân Loại'] = ""
                 df['Lý Do Chấm Điểm'] = ""
             
-            progress_text = "Đang phân tích và chấm điểm..."
+            progress_text = "Đang phân tích..."
             my_bar = st.progress(0, text=progress_text)
             
             total_rows = len(df)
             
             for index, row in df.iterrows():
-                nhu_cau = str(row[col_name])
-                if pd.notna(nhu_cau) and nhu_cau.strip() != "":
-                    score, category, reason = score_lead_with_ai(client, nhu_cau)
-                    df.at[index, 'Điểm Số'] = score
-                    df.at[index, 'Phân Loại'] = category
-                    df.at[index, 'Lý Do Chấm Điểm'] = reason
+                nhu_cau = row[col_name]
+                score, category, reason = score_lead_rule_based(nhu_cau)
+                df.at[index, 'Điểm Số'] = score
+                df.at[index, 'Phân Loại'] = category
+                df.at[index, 'Lý Do Chấm Điểm'] = reason
                 
                 # Cập nhật thanh tiến trình
                 progress = (index + 1) / total_rows
                 my_bar.progress(progress, text=f"{progress_text} ({index + 1}/{total_rows})")
             
             st.session_state.df = df
-            st.success("✨ Đã hoàn thành chấm điểm AI!")
+            st.success("✨ Đã hoàn thành chấm điểm!")
 
 # 3. Human-in-the-loop: Kiểm duyệt và Chỉnh sửa
 if st.session_state.df is not None and 'Điểm Số' in st.session_state.df.columns:
-    st.subheader("🕵️ Kiểm duyệt kết quả (Human-in-the-loop)")
-    st.markdown("Bạn có thể chỉnh sửa trực tiếp trên bảng dữ liệu bên dưới trước khi xuất file.")
+    st.subheader("🕵️ Kiểm duyệt kết quả")
     
     # Cho phép chỉnh sửa bảng dữ liệu trực tiếp
     edited_df = st.data_editor(st.session_state.df, num_rows="dynamic", use_container_width=True)
-    
-    # Cập nhật lại session_state với dữ liệu đã sửa
     st.session_state.df = edited_df
 
     # 4. Xuất Excel
-    st.subheader("📥 Xuất dữ liệu bàn giao")
+    st.subheader("📥 Xuất dữ liệu")
     
-    # Tạo in-memory buffer cho file Excel
     output = io.BytesIO()
     with pd.ExcelWriter(output, engine='openpyxl') as writer:
-        edited_df.to_excel(writer, index=False, sheet_name='Lead Scoring Results')
+        edited_df.to_excel(writer, index=False, sheet_name='Results')
     excel_data = output.getvalue()
     
     st.download_button(
         label="⬇️ Tải xuống File Excel",
         data=excel_data,
-        file_name='Lead_Scoring_Ket_Qua.xlsx',
+        file_name='Ket_Qua_Lead_Scoring.xlsx',
         mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
         type="primary"
     )
