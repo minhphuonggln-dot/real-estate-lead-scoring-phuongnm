@@ -69,8 +69,16 @@ def connect_to_gsheet(sheet_id_or_name):
         "https://www.googleapis.com/auth/drive"
     ]
     try:
-        # Load credentials từ file local
-        creds = Credentials.from_service_account_file("credentials.json", scopes=scopes)
+        # Load credentials thủ công để xử lý lỗi xuống dòng trong private_key
+        import json
+        with open("credentials.json", "r") as f:
+            creds_info = json.load(f)
+        
+        # Sửa lỗi JWT Signature bằng cách đảm bảo \n được hiểu là xuống dòng thật
+        if "private_key" in creds_info:
+            creds_info["private_key"] = creds_info["private_key"].replace("\\n", "\n")
+            
+        creds = Credentials.from_service_account_info(creds_info, scopes=scopes)
         client = gspread.authorize(creds)
         
         # Mở bằng ID hoặc Tên
