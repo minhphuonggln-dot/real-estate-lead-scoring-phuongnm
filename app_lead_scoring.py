@@ -74,13 +74,24 @@ def connect_to_gsheet(sheet_id_or_name):
         with open("credentials.json", "r") as f:
             creds_info = json.load(f)
         
-        # Sửa lỗi JWT Signature bằng cách đảm bảo \n được hiểu là xuống dòng thật
+        # Sửa lỗi JWT Signature bằng cách chuẩn hóa lại toàn bộ Key
         if "private_key" in creds_info:
-            creds_info["private_key"] = creds_info["private_key"].replace("\\n", "\n")
+            pk = creds_info["private_key"]
+            # 1. Loại bỏ các phần header/footer và các ký tự xuống dòng hiện có
+            pk = pk.replace("-----BEGIN PRIVATE KEY-----", "").replace("-----END PRIVATE KEY-----", "")
+            pk = pk.replace("\\n", "").replace("\n", "").replace("\r", "").replace(" ", "")
+            
+            # 2. Dựng lại Key với định dạng xuống dòng chuẩn của Google
+            # Google yêu cầu header và footer cách nhau bởi dấu xuống dòng thật
+            creds_info["private_key"] = "-----BEGIN PRIVATE KEY-----\n" + pk + "\n-----END PRIVATE KEY-----\n"
             
         creds = Credentials.from_service_account_info(creds_info, scopes=scopes)
         client = gspread.authorize(creds)
         
+        # Xử lý nếu người dùng dán cả link URL thay vì chỉ ID
+        if "docs.google.com/spreadsheets/d/" in sheet_id_or_name:
+            sheet_id_or_name = sheet_id_or_name.split("/d/")[1].split("/")[0]
+
         # Mở bằng ID hoặc Tên
         try:
             sh = client.open_by_key(sheet_id_or_name)
