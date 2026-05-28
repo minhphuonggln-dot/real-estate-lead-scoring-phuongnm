@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Lead Magnet — Phễu Khóa Học AI MindX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Phudu:wght@400;500;700;900&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mindx: {
+                            navy: '#00105b',
+                            red: '#d32027',
+                            orange: '#f58220',
+                            green: '#009640',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @font-face {
+            font-family: 'DT Phudu';
+            src: local('DT Phudu');
+        }
+
+        @font-face {
+            font-family: 'SVN Gilroy';
+            src: local('SVN Gilroy');
+        }
+
+        :root {
+            --font-title: 'DT Phudu', 'Phudu', sans-serif;
+            --font-body: 'SVN Gilroy', 'Montserrat', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .font-title {
+            font-family: var(--font-title);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loader-sm {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .table-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .table-container::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+
+    <style>
+        .cta-active-base {
+            color: white !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+            transform: scale(1.02);
+        }
+
+        .cta-active-base p,
+        .cta-active-base ul,
+        .cta-active-base li,
+        .cta-active-base span,
+        .cta-active-base i {
+            color: white !important;
+        }
+
+        .cta-active-sv {
+            background-color: #0b1f3f !important;
+            border-color: #1e3a8a !important;
+        }
+
+        .cta-active-sv strong {
+            color: #bfdbfe !important;
+        }
+
+        .cta-active-hr {
+            background-color: #991b1b !important;
+            border-color: #7f1d1d !important;
+        }
+
+        .cta-active-hr strong {
+            color: #fecaca !important;
+        }
+
+        .cta-active-mkt {
+            background-color: #c2410c !important;
+            border-color: #9a3412 !important;
+        }
+
+        .cta-active-mkt strong {
+            color: #fed7aa !important;
+        }
+
+        .cta-active-fin {
+            background-color: #166534 !important;
+            border-color: #14532d !important;
+        }
+
+        .cta-active-fin strong {
+            color: #bbf7d0 !important;
+        }
+
+        .cta-active-mgr {
+            background-color: #581c87 !important;
+            border-color: #4c1d95 !important;
+        }
+
+        .cta-active-mgr strong {
+            color: #e9d5ff !important;
+        }
+
+        .cta-active-hr button,
+        .cta-active-mkt button {
+            background-color: #0b1f3f !important;
+        }
+
+        .cta-active-hr button:hover,
+        .cta-active-mkt button:hover {
+            background-color: #1e3a8a !important;
+        }
+
+        .cta-block {
+            transition: all 0.7s ease;
+        }
+    </style>
+
+</head>
+
+<body class="antialiased min-h-screen pb-20">
+
+    <!-- Hero Banner -->
+    <section
+        class="bg-gradient-to-br from-[#e11d24] to-[#a81015] text-white py-20 md:py-32 px-4 relative overflow-hidden flex items-center justify-center min-h-[65vh]">
+        <!-- Lớp phủ trang trí tỏa sáng -->
+        <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15)_0%,transparent_60%)] pointer-events-none">
+        </div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center">
+            <!-- Badge -->
+            <div
+                class="inline-block border border-white/40 bg-white/5 backdrop-blur-sm rounded-full px-5 py-1 text-xs md:text-sm font-bold tracking-widest mb-6 uppercase">
+                Cập nhật: 2026
+            </div>
+
+            <!-- Headline -->
+            <h2
+                class="text-4xl md:text-6xl lg:text-7xl font-black font-title mb-6 leading-[1.1] uppercase tracking-tight drop-shadow-md">
+                Trải nghiệm thực chiến <br>
+                <span class="text-[#F3C73D]">AI FOR WORK</span> TẠI MINDX
+            </h2>
+
+            <!-- Subheadline -->
+            <p
+                class="text-lg md:text-xl lg:text-2xl mb-12 font-medium font-body opacity-95 drop-shadow-sm max-w-4xl mx-auto leading-relaxed">
+                Biến AI thành lợi thế cạnh tranh cốt lõi cho công việc của bạn.
+            </p>
+
+            <!-- Button -->
+            <button onclick="openModal()"
+                class="group bg-[#0b1c60] text-white px-8 md:px-10 py-4 rounded-full font-bold text-lg md:text-xl transition-all duration-300 hover:bg-[#0f2887] shadow-[0_0_40px_rgba(11,28,96,0.8)] flex items-center gap-3 transform hover:scale-105">
+                Khám phá chương trình ngay
+                <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
+            </button>
+        </div>
+    </section>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 md:py-12">
+
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold mb-3 font-title">Bạn thuộc nhóm đối tượng nào?</h2>
+            <p class="text-gray-600 text-lg">Chọn vai trò của bạn để xem cách AI tự động hóa công việc thực tế trong
+                chưa đầy 5 giây.</p>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="flex flex-wrap justify-center gap-3 mb-10">
+            <button onclick="openTab('tab-sv')" id="btn-tab-sv"
+                class="tab-btn active px-6 py-3 rounded-full font-bold text-white bg-mindx-navy shadow-md hover:opacity-90 transition transform hover:scale-105">
+                <i class="fas fa-user-graduate mr-2"></i> Sinh Viên & Fresher
+            </button>
+            <button onclick="openTab('tab-hr')" id="btn-tab-hr"
+                class="tab-btn px-6 py-3 rounded-full font-bold text-mindx-navy bg-white border-2 border-mindx-navy hover:bg-blue-50 transition transform hover:scale-105">
+                <i class="fas fa-users mr-2"></i> Nhân Sự (HR)
+            </button>
+            <button onclick="openTab('tab-mkt')" id="btn-tab-mkt"
+                class="tab-btn px-6 py-3 rounded-full font-bold text-mindx-orange bg-white border-2 border-mindx-orange hover:bg-orange-50 transition transform hover:scale-105">
+                <i class="fas fa-bullhorn mr-2"></i> Marketing
+            </button>
+            <button onclick="openTab('tab-fin')" id="btn-tab-fin"
+                class="tab-btn px-6 py-3 rounded-full font-bold text-mindx-green bg-white border-2 border-mindx-green hover:bg-green-50 transition transform hover:scale-105">
+                <i class="fas fa-chart-line mr-2"></i> Tài Chính / Kế Toán
+            </button>
+            <button onclick="openTab('tab-mgr')" id="btn-tab-mgr"
+                class="tab-btn px-6 py-3 rounded-full font-bold text-mindx-red bg-white border-2 border-mindx-red hover:bg-red-50 transition transform hover:scale-105">
+                <i class="fas fa-user-tie mr-2"></i> Quản Lý & Chủ DN
+            </button>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- TAB 1: SINH VIÊN & FRESHER (Màu Navy) -->
+        <!-- ============================================== -->
+        <div id="tab-sv" class="tab-content active">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-8 border-t-4 border-mindx-navy">
+                <div class="p-6 md:p-8">
+
+                    <div
+                        class="mb-4 bg-blue-50 p-4 rounded-lg border border-blue-100 text-blue-900 italic text-sm md:text-base">
+                        "Mất 3–5 giờ chỉ để 'biết mình cần nghiên cứu gì'? Hỏi AI nhưng cứ ra kết quả chung chung, không
+                        có nguồn, không dùng được?"
+                    </div>
+
+                    <!-- KỊCH BẢN 1A -->
+                    <div class="mb-12 border-b border-gray-200 pb-10">
+                        <div class="flex items-center gap-3 mb-4 mt-6">
+                            <span class="bg-mindx-navy text-white px-3 py-1 rounded-full text-sm font-bold">Demo
+                                1</span>
+                            <h3 class="text-2xl font-bold font-title text-mindx-navy">Research Chuyên Sâu Trong 3 Phút
+                            </h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">Hầu hết sinh viên đang dùng AI như Google Search — hỏi câu đơn,
+                            nhận câu trả lời chung chung. Không có nguồn trích dẫn, không có cấu trúc để dùng trong bài.
+                        </p>
+
+                        <div class="grid md:grid-cols-12 gap-8">
+                            <!-- Input -->
+                            <div class="md:col-span-5 bg-gray-50 p-6 rounded-xl border border-gray-200">
+                                <label class="block font-bold mb-3 text-lg">Chọn 1 chủ đề nghiên cứu:</label>
+                                <select
+                                    class="w-full p-3 rounded-lg border border-gray-300 mb-6 focus:ring-2 focus:ring-mindx-navy text-sm md:text-base text-gray-700">
+                                    <option>🎓 Ảnh hưởng của mạng xã hội đến sức khỏe tâm lý Gen Z</option>
+                                    <option>🤖 Ứng dụng AI trong ngành giáo dục Việt Nam</option>
+                                    <option>🌱 Phát triển bền vững trong doanh nghiệp vừa và nhỏ</option>
+                                </select>
+                                <button onclick="runSim(this, 'result-sv-1')"
+                                    class="w-full bg-mindx-navy text-white font-bold py-4 rounded-lg hover:bg-blue-900 transition flex items-center justify-center shadow-lg transform hover:-translate-y-1">
+                                    <i class="fas fa-search mr-2"></i> Bắt đầu Research với AI
+                                </button>
+                            </div>
+
+                            <!-- Output -->
+                            <div id="result-sv-1" class="md:col-span-7 hidden flex-col">
+                                <h4 class="font-bold text-lg mb-3">Kết quả so sánh:</h4>
+                                <div class="space-y-4">
+                                    <!-- Bad -->
+                                    <div class="p-4 bg-red-50 border-l-4 border-red-500 rounded-r-lg">
+                                        <p class="text-sm font-bold text-red-700 mb-1">❌ Cách hỏi thông thường (Prompt:
+                                            "Viết về ảnh hưởng của MXH đến Gen Z")</p>
+                                        <p class="text-sm text-gray-700 italic">→ AI trả ra 1 đoạn văn chung chung,
+                                            không có cấu trúc, không có nguồn, không biết dùng vào đâu.</p>
+                                    </div>
+                                    <!-- Good -->
+                                    <div class="p-5 bg-green-50 border-l-4 border-green-600 rounded-r-lg shadow-sm">
+                                        <p class="text-sm font-bold text-green-700 mb-3">✅ Phương pháp MindX (AI trả ra
+                                            đầy đủ 4 thành phần):</p>
+                                        <div class="text-sm text-gray-800 space-y-3">
+                                            <p><strong>① Bản đồ chủ đề (5 góc độ):</strong><br>
+                                                - Tiêu cực: lo âu, FOMO, mất ngủ<br>
+                                                - Tích cực: kết nối, tự học<br>
+                                                - So sánh nền tảng (TikTok vs FB)<br>
+                                                - Giải pháp (Digital detox)<br>
+                                                - Research Gap tại Việt Nam</p>
+
+                                            <p><strong>② 5 Câu hỏi nghiên cứu</strong> (dùng cho mục tiêu và
+                                                Introduction)</p>
+
+                                            <p><strong>③ Từ khóa học thuật:</strong> <br>
+                                                <span
+                                                    class="bg-white px-2 py-1 rounded text-xs border border-gray-200">social
+                                                    media mental health</span>
+                                                <span
+                                                    class="bg-white px-2 py-1 rounded text-xs border border-gray-200">screen
+                                                    time anxiety</span>
+                                            </p>
+
+                                            <p><strong>④ Gợi ý 3 loại nguồn:</strong> Báo cáo WHO · Google Scholar ·
+                                                Nghiên cứu trong nước</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Block 1A -->
+                        <div id="cta-block-1a" class="mt-8 p-6 bg-blue-50 rounded-xl border border-blue-200 cta-block">
+                            <p class="mb-4 text-gray-800"><strong
+                                    class="text-mindx-navy transition-colors duration-700">💡 Cùng 1 AI — nhưng kết quả
+                                    khác biệt hoàn toàn vì cách hỏi khác nhau.</strong> Đây chính là kỹ năng đầu tiên
+                                bạn học trong tuần 1 của chương trình.</p>
+                            <p class="font-bold mb-2">Trong chương trình, bạn sẽ học:</p>
+                            <ul class="space-y-2 mb-6 text-gray-700 text-sm md:text-base">
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Viết Prompt 4 thành phần để
+                                    AI research đúng hướng, có nguồn, có cấu trúc ngay từ lần đầu.</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Dùng AI xây dàn ý + viết bài
+                                    luận không bị lặp ý, không bị phạt "AI generated".</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Tạo bộ công cụ học tập cá
+                                    nhân: tóm tắt, flashcard, luyện đề tự động.</li>
+                            </ul>
+                            <div class="text-center">
+                                <button onclick="openModal()"
+                                    class="inline-block bg-mindx-red text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition shadow-md font-title text-lg">
+                                    → KHÁM PHÁ CHƯƠNG TRÌNH NGAY
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KỊCH BẢN 1B -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-mindx-navy text-white px-3 py-1 rounded-full text-sm font-bold">Demo
+                                2</span>
+                            <h3 class="text-2xl font-bold font-title text-mindx-navy">Xây Dàn Ý Thuyết Trình Trong 30
+                                Giây</h3>
+                        </div>
+
+                        <div
+                            class="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6 text-center max-w-2xl mx-auto">
+                            <h4 class="font-bold mb-4 text-left">Nhập Tên môn học + Chủ đề bài tập lớn:</h4>
+                            <input type="text" value="Marketing — Phân tích chiến lược Coca-Cola tại Việt Nam"
+                                class="w-full p-3 rounded-lg border border-gray-300 mb-6 focus:ring-2 focus:ring-mindx-navy text-left text-sm font-semibold text-gray-700">
+                            <button onclick="runSim(this, 'result-sv-2')"
+                                class="bg-mindx-navy text-white font-bold py-3 px-8 rounded-full hover:bg-blue-900 transition shadow-lg inline-flex items-center">
+                                <i class="fas fa-bolt mr-2"></i> AI Lên Dàn Ý (30s)
+                            </button>
+                        </div>
+
+                        <!-- Output 1B -->
+                        <div id="result-sv-2" class="hidden">
+                            <div class="bg-white border rounded-xl shadow-sm p-6">
+                                <h4 class="font-bold text-lg mb-4 text-mindx-navy border-b pb-2">Dàn bài 8 Slide đề
+                                    xuất:</h4>
+                                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                    <div class="p-3 bg-gray-50 rounded border-l-4 border-mindx-navy"><strong>Slide
+                                            1:</strong> Tiêu đề & Giới thiệu chung (Logo)</div>
+                                    <div class="p-3 bg-gray-50 rounded border-l-4 border-mindx-navy"><strong>Slide
+                                            2:</strong> Bối cảnh thị trường (Biểu đồ vĩ mô)</div>
+                                    <div class="p-3 bg-gray-50 rounded border-l-4 border-mindx-navy"><strong>Slide
+                                            3:</strong> Phân tích đối thủ cạnh tranh (SWOT)</div>
+                                    <div class="p-3 bg-gray-50 rounded border-l-4 border-mindx-navy"><strong>Slide
+                                            4:</strong> Chiến lược Product & Price</div>
+                                    <div class="p-3 bg-gray-50 rounded border-l-4 border-mindx-navy"><strong>Slide
+                                            5:</strong> Chiến lược Place & Promotion</div>
+                                    <div class="p-3 bg-gray-50 rounded border-l-4 border-mindx-navy"><strong>Slide
+                                            6:</strong> Phân tích rủi ro hiện tại</div>
+                                    <div class="p-3 bg-gray-50 rounded border-l-4 border-mindx-navy"><strong>Slide
+                                            7:</strong> Đề xuất giải pháp tăng trưởng</div>
+                                    <div class="p-3 bg-gray-50 rounded border-l-4 border-mindx-navy"><strong>Slide
+                                            8:</strong> Q&A & Cảm ơn</div>
+                                </div>
+                                <div class="mt-6 text-center">
+                                    <button
+                                        class="text-sm bg-gray-200 text-gray-700 font-bold py-2 px-6 rounded-full cursor-not-allowed">
+                                        <i class="fas fa-eye mr-2"></i> Xem AI viết nội dung chi tiết cho Slide 2 (Mô
+                                        phỏng)
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Block 1B -->
+                        <div id="cta-block-1b" class="mt-8 p-6 bg-blue-50 rounded-xl border border-blue-200 cta-block">
+                            <p class="mb-4 text-gray-800"><strong class="text-mindx-navy">💡 Bạn vừa thấy AI xây dàn bài
+                                    trong 30 giây.</strong> Nhưng để dàn bài đúng cấu trúc, không lan man, và viết slide
+                                đúng trọng tâm — bạn cần biết kỹ thuật thiết kế Prompt theo Output Structure.</p>
+                            <p class="font-bold mb-2">Trong chương trình, bạn sẽ học:</p>
+                            <ul class="space-y-2 mb-6 text-gray-700 text-sm md:text-base">
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Tạo slide PowerPoint hoàn
+                                    chỉnh từ dàn ý — chỉ mất thêm 3–5 phút.</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Viết script thuyết trình phù
+                                    hợp từng đối tượng (hội đồng, pitch startup).</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Tóm tắt, ôn tập, và chuẩn bị
+                                    phần Q&A với AI — nhanh gấp 5 lần.</li>
+                            </ul>
+                            <div class="text-center">
+                                <button onclick="openModal()"
+                                    class="inline-block bg-mindx-red text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition shadow-md font-title text-lg">
+                                    → KHÁM PHÁ CHƯƠNG TRÌNH NGAY
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- TAB 2: NHÂN SỰ HR (Màu Đỏ) -->
+        <!-- ============================================== -->
+        <div id="tab-hr" class="tab-content">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-8 border-t-4 border-mindx-red">
+                <div class="p-6 md:p-8">
+
+                    <div
+                        class="mb-4 bg-red-50 p-4 rounded-lg border border-red-100 text-red-900 italic text-sm md:text-base">
+                        "Mất 15–20 giờ/tuần sàng lọc CV thủ công, soạn JD, viết email từ chối ứng viên?"
+                    </div>
+
+                    <!-- KỊCH BẢN 2A -->
+                    <div class="mb-12 border-b border-gray-200 pb-10">
+                        <div class="flex items-center gap-3 mb-4 mt-6">
+                            <span class="bg-mindx-red text-white px-3 py-1 rounded-full text-sm font-bold">Demo 1</span>
+                            <h3 class="text-2xl font-bold font-title text-mindx-red">AI Sàng Lọc CV & Chấm Điểm Ứng Viên
+                            </h3>
+                        </div>
+
+                        <div class="grid md:grid-cols-12 gap-6">
+                            <!-- Input -->
+                            <div class="md:col-span-5 bg-gray-50 p-5 rounded-xl border border-gray-200">
+                                <h4 class="font-bold mb-3 border-b pb-2">Dữ liệu đầu vào</h4>
+                                <div class="mb-3">
+                                    <span class="text-xs text-gray-500">Mô tả công việc (JD):</span>
+                                    <div class="font-semibold bg-white p-2 rounded border mt-1 text-sm text-mindx-red">
+                                        Nhân viên Kinh doanh (B2B)</div>
+                                </div>
+                                <div class="mb-4">
+                                    <span class="text-xs text-gray-500">Tệp hồ sơ tải lên:</span>
+                                    <div class="mt-2 space-y-2">
+                                        <div class="flex items-center gap-2 text-sm bg-white p-2 border rounded"><i
+                                                class="fas fa-file-pdf text-red-500"></i> CV_Tot_Profile1.pdf</div>
+                                        <div class="flex items-center gap-2 text-sm bg-white p-2 border rounded"><i
+                                                class="fas fa-file-pdf text-red-500"></i> CV_TBinh_Profile2.pdf</div>
+                                        <div class="flex items-center gap-2 text-sm bg-white p-2 border rounded"><i
+                                                class="fas fa-file-pdf text-red-500"></i> CV_Yeu_Profile3.pdf</div>
+                                    </div>
+                                </div>
+                                <div class="mb-5 bg-white p-3 border rounded shadow-sm">
+                                    <label class="block text-sm font-bold mb-1">Nhập 1 tiêu chí bắt buộc của riêng
+                                        bạn:</label>
+                                    <input type="text" value="Bắt buộc có tiếng Anh giao tiếp"
+                                        class="w-full text-sm p-2 border border-gray-300 rounded focus:ring-1 focus:ring-mindx-red outline-none">
+                                </div>
+
+                                <button onclick="runSim(this, 'result-hr-1')"
+                                    class="w-full bg-mindx-red text-white font-bold py-3 rounded-lg hover:bg-red-800 transition flex items-center justify-center shadow-md">
+                                    <i class="fas fa-filter mr-2"></i> Để AI Phân Tích & Lọc
+                                </button>
+                            </div>
+
+                            <!-- Output -->
+                            <div id="result-hr-1" class="md:col-span-7 hidden flex-col">
+                                <h4 class="font-bold text-lg mb-3">Kết quả phân tích:</h4>
+
+                                <div class="table-container overflow-x-auto bg-white rounded-lg border mb-4 shadow-sm">
+                                    <table class="min-w-full text-sm text-left">
+                                        <thead class="bg-gray-100 text-gray-700">
+                                            <tr>
+                                                <th class="px-4 py-3">Ứng viên</th>
+                                                <th class="px-4 py-3 text-center">Tiếng Anh (Tiêu chí riêng)</th>
+                                                <th class="px-4 py-3 text-center">Điểm Fit</th>
+                                                <th class="px-4 py-3">Đề xuất</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y">
+                                            <tr class="bg-green-50">
+                                                <td class="px-4 py-3 font-bold">Ứng viên Tốt</td>
+                                                <td class="px-4 py-3 text-center font-bold text-green-600">Đạt (IELTS
+                                                    6.5)</td>
+                                                <td class="px-4 py-3 text-center font-bold text-green-700">92/100</td>
+                                                <td class="px-4 py-3 text-green-700 font-semibold">Phỏng vấn V1</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-3 font-bold">Ứng viên TB</td>
+                                                <td class="px-4 py-3 text-center font-bold text-green-600">Đạt (Giao
+                                                    tiếp)</td>
+                                                <td class="px-4 py-3 text-center font-bold text-yellow-600">65/100</td>
+                                                <td class="px-4 py-3 text-yellow-600">Backup</td>
+                                            </tr>
+                                            <tr class="bg-red-50">
+                                                <td class="px-4 py-3 font-bold">Ứng viên Yếu</td>
+                                                <td class="px-4 py-3 text-center font-bold text-red-600">Không đạt</td>
+                                                <td class="px-4 py-3 text-center font-bold text-red-600">Loại</td>
+                                                <td class="px-4 py-3 text-red-600 text-xs">Loại vì thiếu Tiếng Anh</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="bg-white border border-green-200 rounded-lg p-3 text-sm">
+                                    <p class="font-bold text-green-700 mb-1"><i class="fas fa-comment-dots"></i> Gợi ý
+                                        câu hỏi phỏng vấn (UV Tốt):</p>
+                                    <p class="text-gray-600 italic">"Bạn đề cập đến việc tăng 30% doanh số B2B năm 2024.
+                                        Hãy kể chi tiết bằng tiếng Anh về một deal khó nhất bạn đã chốt?"</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Block 2A -->
+                        <div id="cta-block-2a" class="mt-8 p-6 bg-red-50 rounded-xl border border-red-200 cta-block">
+                            <p class="mb-4 text-gray-800"><strong class="text-mindx-red">💡 Bạn vừa thấy AI lọc CV theo
+                                    đúng tiêu chí bạn đặt ra.</strong> Nhưng để tự xây được một System Prompt đủ chính
+                                xác cho từng vị trí khác nhau trong công ty, bạn cần học kỹ thuật viết Instruction
+                                Layer.</p>
+                            <p class="font-bold mb-2">Trong chương trình, bạn sẽ học:</p>
+                            <ul class="space-y-2 mb-6 text-gray-700 text-sm md:text-base">
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Xây hệ thống chấm CV tự động
+                                    theo tiêu chí riêng của từng vị trí.</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Dùng AI soạn JD, bảng đánh
+                                    giá, email mời/từ chối lịch sự trong vài giây.</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Tự động hóa bảng lương, tổng
+                                    hợp dữ liệu, báo cáo HR định kỳ — giảm 70% thời gian.</li>
+                            </ul>
+                            <div class="text-center">
+                                <button onclick="openModal()"
+                                    class="inline-block bg-mindx-red text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition shadow-md font-title text-lg">
+                                    → KHÁM PHÁ CHƯƠNG TRÌNH NGAY
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KỊCH BẢN 2B -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-mindx-red text-white px-3 py-1 rounded-full text-sm font-bold">Demo 2</span>
+                            <h3 class="text-2xl font-bold font-title text-mindx-red">Soạn JD Chuẩn Trong 2 Phút</h3>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-gray-50 p-5 rounded-xl border border-gray-200">
+                                <label class="block text-sm font-bold mb-2">Vị trí tuyển dụng:</label>
+                                <select id="select-hr-job"
+                                    class="w-full p-2 rounded border border-gray-300 mb-4 focus:ring-2 focus:ring-mindx-red text-sm">
+                                    <option value="Trưởng nhóm Digital Marketing">Trưởng nhóm Digital Marketing</option>
+                                    <option value="Nhân viên Kế toán Nội bộ">Nhân viên Kế toán Nội bộ</option>
+                                    <option value="Chuyên viên Tuyển dụng (TA)">Chuyên viên Tuyển dụng (TA)</option>
+                                </select>
+
+                                <label class="block text-sm font-bold mb-2">Nhập 3 yêu cầu chính (Gạch đầu
+                                    dòng):</label>
+                                <textarea id="input-hr-req"
+                                    class="w-full h-24 p-3 rounded border border-gray-300 focus:ring-2 focus:ring-mindx-red mb-4 text-sm font-mono text-gray-700">- 2 năm kinh nghiệm chạy ads FB/Google
+- Quản lý ngân sách > 100tr/tháng
+- Có tư duy phân tích số liệu</textarea>
+
+                                <button onclick="runHrSim(this)"
+                                    class="w-full bg-mindx-red text-white font-bold py-3 rounded-lg hover:bg-red-800 transition flex items-center justify-center shadow">
+                                    <i class="fas fa-file-alt mr-2"></i> Sinh JD Tự Động (2 phút)
+                                </button>
+                            </div>
+
+                            <div id="result-hr-2" class="hidden">
+                                <div
+                                    class="bg-white border rounded-lg shadow-inner h-full flex flex-col relative overflow-hidden">
+                                    <div
+                                        class="bg-gray-100 p-2 border-b flex justify-between items-center text-xs text-gray-500">
+                                        <span id="hr-jd-filename"><i class="fas fa-file-word text-blue-600 mr-1"></i>
+                                            Job_Description_D_MKT.docx</span>
+                                        <span>Sinh bởi AI</span>
+                                    </div>
+                                    <div id="output-hr-jd"
+                                        class="p-4 overflow-y-auto max-h-[250px] text-sm text-gray-700 space-y-3">
+                                        <h1 class="text-lg font-bold text-center text-mindx-red uppercase">Mô tả công
+                                            việc: Trưởng Nhóm Digital Marketing</h1>
+                                        <p><strong>I. MỤC TIÊU:</strong> Lập kế hoạch, triển khai chiến dịch quảng
+                                            cáo...</p>
+                                        <p><strong>II. MÔ TẢ CÔNG VIỆC:</strong><br>- Vận hành trực tiếp chiến dịch trên
+                                            Facebook Ads, Google Ads.<br>- Theo dõi, đánh giá (CPA, ROAS, CVR)...</p>
+                                        <p><strong>III. YÊU CẦU ỨNG VIÊN:</strong><br>- Ít nhất 2 năm kinh nghiệm.<br>-
+                                            Tư duy nhạy bén với số liệu...</p>
+                                        <p><strong>IV. QUYỀN LỢI:</strong> Lương cứng + Thưởng KPI...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Block 2B -->
+                        <div id="cta-block-2b" class="mt-8 p-6 bg-red-50 rounded-xl border border-red-200 cta-block">
+                            <p class="mb-4 text-gray-800"><strong class="text-mindx-red">💡 Bạn vừa thấy AI viết JD hoàn
+                                    chỉnh từ 3 gạch đầu dòng.</strong> Điểm mấu chốt không phải là AI — mà là bạn biết
+                                cách "nhúng" tiêu chuẩn của công ty vào câu lệnh.</p>
+                            <p class="font-bold mb-2">Trong chương trình, bạn sẽ học:</p>
+                            <ul class="space-y-2 mb-6 text-gray-700 text-sm md:text-base">
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Tạo thư viện JD mẫu cho 20+
+                                    vị trí phổ biến — dùng đi dùng lại không cần viết mới.</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Tự động hóa tổng hợp dữ liệu
+                                    nhân sự và tính bảng lương.</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Xây quy trình onboarding tự
+                                    động không cần HR làm thủ công.</li>
+                            </ul>
+                            <div class="text-center">
+                                <button onclick="openModal()"
+                                    class="inline-block bg-mindx-red text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition shadow-md font-title text-lg">
+                                    → KHÁM PHÁ CHƯƠNG TRÌNH NGAY
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- TAB 3: MARKETING (Màu Cam) -->
+        <!-- ============================================== -->
+        <div id="tab-mkt" class="tab-content">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-8 border-t-4 border-mindx-orange">
+                <div class="p-6 md:p-8">
+                    <div
+                        class="mb-4 bg-orange-50 p-4 rounded-lg border border-orange-100 text-orange-900 italic text-sm md:text-base">
+                        "Mất 2–4 giờ/tuần kéo số thủ công từ Facebook Ads, copy vào Excel, tô màu, viết nhận xét rồi báo
+                        cáo sếp?"
+                    </div>
+
+                    <!-- KỊCH BẢN 3A: CONTENT WIN -->
+                    <div class="mb-12 border-b border-gray-200 pb-10">
+                        <div class="flex items-center gap-3 mb-4 mt-6">
+                            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-bold">Demo 3A</span>
+                            <h3 class="text-2xl font-bold font-title text-mindx-orange">Từ Content Win → Phân Tích
+                                Pattern → Bật Ra Bài Viết Mới</h3>
+                        </div>
+
+                        <div class="grid md:grid-cols-12 gap-8">
+                            <!-- Left: Steps explanation -->
+                            <div
+                                class="md:col-span-5 bg-gray-50 p-6 rounded-xl border border-gray-200 flex flex-col justify-center">
+                                <p class="text-gray-700 mb-6 leading-relaxed">
+                                    Ví dụ: Bạn muốn viết bài bán hàng cho ngành <strong class="text-gray-900">"Thẩm mỹ
+                                        viện"</strong>.<br><br>
+                                    Thay vì tự nghĩ ý tưởng, AI có thể giúp bạn:
+                                </p>
+                                <ul class="space-y-4 mb-8 text-sm text-gray-600">
+                                    <li><i class="fas fa-search text-mindx-orange mr-2"></i> <strong>Bước 1:</strong> Tự
+                                        động quét 50 bài viết Viral nhất của đối thủ.</li>
+                                    <li><i class="fas fa-brain text-mindx-orange mr-2"></i> <strong>Bước 2:</strong>
+                                        Phân tích & trích xuất ra Pattern (Công thức chung).</li>
+                                    <li><i class="fas fa-magic text-mindx-orange mr-2"></i> <strong>Bước 3:</strong>
+                                        Dùng Pattern đó để đẻ ra hàng loạt bài viết mới.</li>
+                                </ul>
+
+                                <button onclick="runContentSim(this)"
+                                    class="w-full bg-mindx-orange text-white font-bold py-4 rounded-lg hover:bg-orange-600 transition flex items-center justify-center shadow-lg transform hover:-translate-y-1">
+                                    <i class="fas fa-bolt mr-2"></i> Kích Hoạt Agent Phân Tích
+                                </button>
+                            </div>
+
+                            <!-- Right: Output -->
+                            <div id="result-mkt-3a" class="md:col-span-7 hidden flex-col">
+                                <h4 class="font-bold text-lg mb-4 text-mindx-orange border-b pb-2 uppercase">Bài viết
+                                    quảng cáo được tạo tự động</h4>
+
+                                <div
+                                    class="bg-white rounded-lg border border-orange-200 shadow-sm overflow-hidden text-sm">
+                                    <div class="p-5 bg-orange-50/30">
+                                        <div class="mb-5 flex items-center gap-2">
+                                            <span
+                                                class="bg-green-100 text-green-800 px-3 py-1.5 rounded-full text-xs font-bold shadow-sm border border-green-200">
+                                                <i class="fas fa-check-circle mr-1"></i> Bài viết hoàn chỉnh (Dựa trên
+                                                Pattern Viral)
+                                            </span>
+                                        </div>
+                                        <div class="space-y-4 text-gray-800 text-base leading-relaxed">
+                                            <p class="text-lg font-bold text-red-600">BẠN ĐANG LÃNG PHÍ KHOẢNG 23H - 3
+                                                NGÀY LÀM VIỆC CHỈ ĐỂ THỰC HIỆN CÁC TASK THỦ CÔNG?</p>
+
+                                            <p>Việc mất thời gian vào các công việc lặp lại không chỉ khiến bạn quá tải,
+                                                mà còn kìm hãm cơ hội tăng lương, thăng chức, thậm chí là đối mặt với
+                                                nguy cơ layoff trước người biết dùng AI.</p>
+
+                                            <p>Đó là lý do MindX xây dựng lộ trình <strong class="text-mindx-navy">AI
+                                                    FOR WORK</strong><br>
+                                                <span class="ml-2">- <strong>50% lý thuyết:</strong> Có tư duy dùng AI
+                                                    đúng cách, nắm chắc bản chất để sử dụng hiệu quả</span><br>
+                                                <span class="ml-2">- <strong>50% thực hành:</strong> Làm trực tiếp dự án
+                                                    thật tại lớp cùng giảng viên và mentor hướng dẫn 2:1</span>
+                                            </p>
+
+                                            <p>Sau khóa học bạn sẽ:<br>
+                                                <span class="ml-2">✔ Xây dựng hệ thống Agentic AI: Tự động hóa quy trình
+                                                    làm việc</span><br>
+                                                <span class="ml-2">✔ Ứng dụng AI phân tích dữ liệu: Tạo báo cáo trực
+                                                    quan và đề xuất hành động phù hợp</span><br>
+                                                <span class="ml-2">✔ Biết cách kết hợp các công cụ AI: Antigravity,
+                                                    ChatGPT, Gemini, Perplexity, NotebookLM, Google AI Studio,...</span>
+                                            </p>
+
+                                            <p class="font-bold text-mindx-orange mt-4">📩 Inbox ngay để được tư vấn lộ
+                                                trình phù hợp và giữ ưu đãi hôm nay!</p>
+                                        </div>
+
+                                        <!-- CTA Block 3A -->
+                                        <div id="cta-block-3a"
+                                            class="mt-8 p-6 bg-orange-50 rounded-xl border border-orange-200 cta-block">
+                                            <p class="mb-4 text-gray-800"><strong class="text-mindx-orange">💡 Bạn vừa
+                                                    thấy AI tự động
+                                                    Research, tìm Pattern và Viết Content trong 3 bước.</strong> Nhưng
+                                                để Content thực
+                                                sự chạm đến Insight khách hàng thay vì văn phong "công nghiệp", bạn cần
+                                                học cách Build
+                                                Persona cho AI.</p>
+                                            <p class="font-bold mb-2">Trong chương trình, bạn sẽ học:</p>
+                                            <ul class="space-y-2 mb-6 text-gray-700 text-sm md:text-base">
+                                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Kỹ thuật
+                                                    "Role-play": Ép AI
+                                                    trở thành Copywriter chuyên nghiệp với văn phong brand của bạn.</li>
+                                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Tạo hệ thống
+                                                    tái chế Content
+                                                    (Repurpose): Từ 1 Video YouTube ra 5 bài Facebook, 3 Email, 1 Blog
+                                                    post trong 5
+                                                    phút.</li>
+                                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Lên plan nội
+                                                    dung 30 ngày tự
+                                                    động bám sát Funnel Marketing.</li>
+                                            </ul>
+                                            <div class="text-center">
+                                                <button onclick="openModal()"
+                                                    class="inline-block bg-mindx-red text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition shadow-md font-title text-lg">
+                                                    → KHÁM PHÁ CHƯƠNG TRÌNH NGAY
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KỊCH BẢN 3B -->
+                    <div class="flex items-center gap-3 mb-4 mt-6">
+                        <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-bold">Demo 3B</span>
+                        <h3 class="text-2xl font-bold font-title text-mindx-orange">Từ Dữ Liệu Quảng Cáo → Dashboard →
+                            Phân Tích Nhanh</h3>
+                    </div>
+
+                    <!-- Bảng dữ liệu thô -->
+                    <div class="mb-6 grid md:grid-cols-12 gap-6 items-end">
+                        <div class="md:col-span-8">
+                            <p class="font-bold mb-2 text-sm text-gray-700">Bước 1: Dữ liệu xuất thô từ Facebook Ads
+                                Manager:</p>
+                            <div class="table-container overflow-x-auto bg-white rounded-lg border shadow-sm">
+                                <table class="min-w-full text-xs md:text-sm text-left">
+                                    <thead class="bg-gray-100 text-gray-700 font-mono">
+                                        <tr>
+                                            <th class="px-4 py-2 border-r">Campaign</th>
+                                            <th class="px-4 py-2">Chi phí</th>
+                                            <th class="px-4 py-2">CTR</th>
+                                            <th class="px-4 py-2 bg-gray-200">ROAS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y font-mono text-gray-600">
+                                        <tr>
+                                            <td class="px-4 py-2 border-r font-bold">Campaign_Retarget</td>
+                                            <td class="px-4 py-2">4.200.000đ</td>
+                                            <td class="px-4 py-2">2,8%</td>
+                                            <td class="px-4 py-2 bg-gray-50">1,8x</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 border-r font-bold">Campaign_Cold</td>
+                                            <td class="px-4 py-2">6.800.000đ</td>
+                                            <td class="px-4 py-2">0,9%</td>
+                                            <td class="px-4 py-2 bg-gray-50">0,7x</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 border-r font-bold">Campaign_Lookalike</td>
+                                            <td class="px-4 py-2">3.100.000đ</td>
+                                            <td class="px-4 py-2">3,2%</td>
+                                            <td class="px-4 py-2 bg-gray-50">4,1x</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="mt-2 text-sm text-gray-500 bg-gray-50 p-2 rounded inline-block">
+                                Ngân sách tháng: <strong>20 triệu</strong> · Đã tiêu (ngày 15): <strong>14,1
+                                    triệu</strong>
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-4 bg-gray-50 p-4 border rounded-lg h-full flex flex-col justify-end">
+                            <label class="block text-sm font-bold mb-2 text-gray-800">Nhập Mục tiêu ROAS KPI của
+                                bạn:</label>
+                            <input type="text" value="2.0"
+                                class="w-full text-center p-3 border border-gray-300 rounded focus:ring-2 focus:ring-mindx-orange outline-none mb-4 font-mono font-bold text-lg">
+                            <button onclick="runSim(this, 'result-mkt-1')"
+                                class="w-full bg-mindx-orange text-white font-bold py-3 rounded-full hover:bg-orange-600 transition shadow-lg transform hover:-translate-y-1">
+                                <i class="fas fa-chart-pie mr-2"></i> AI phân tích & tạo Dashboard
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Output -->
+                    <div id="result-mkt-1" class="hidden bg-[#1e293b] rounded-xl p-6 md:p-8 text-white shadow-inner">
+                        <div class="flex justify-between items-center border-b border-slate-600 pb-4 mb-6">
+                            <h4 class="font-bold text-xl font-title text-white">Bước 2: Dashboard cá nhân hóa theo KPI
+                                (2.0)</h4>
+                            <span class="text-xs bg-slate-800 px-3 py-1 rounded text-slate-300 shadow">Tạo trong
+                                8.4s</span>
+                        </div>
+
+                        <div class="grid md:grid-cols-12 gap-8">
+                            <div class="md:col-span-7 space-y-6">
+                                <div
+                                    class="table-container overflow-x-auto bg-slate-800 rounded-lg border border-slate-700 shadow-sm">
+                                    <table class="min-w-full text-sm text-left">
+                                        <thead class="bg-slate-700 text-slate-200">
+                                            <tr>
+                                                <th class="px-4 py-2 border-r border-slate-600">Campaign</th>
+                                                <th class="px-4 py-2">ROAS</th>
+                                                <th class="px-4 py-2 text-center">So với KPI</th>
+                                                <th class="px-4 py-2">Đánh giá AI</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-600 font-medium">
+                                            <tr>
+                                                <td class="px-4 py-2 border-r border-slate-600">Lookalike</td>
+                                                <td class="px-4 py-2">4,1x</td>
+                                                <td class="px-4 py-2 text-center text-green-400">Vượt xa</td>
+                                                <td class="px-4 py-2 text-xs">🟢 Nên rót thêm ngân sách</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-2 border-r border-slate-600">Retarget</td>
+                                                <td class="px-4 py-2">1,8x</td>
+                                                <td class="px-4 py-2 text-center text-yellow-400">Chưa đạt</td>
+                                                <td class="px-4 py-2 text-xs">🟡 Cần tối ưu thêm</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-2 border-r border-slate-600">Cold</td>
+                                                <td class="px-4 py-2">0,7x</td>
+                                                <td class="px-4 py-2 text-center text-red-400">Quá thấp</td>
+                                                <td class="px-4 py-2 text-xs">🔴 Cắt ngân sách ngay</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="bg-slate-800 p-4 rounded-lg border border-slate-700">
+                                    <div class="flex justify-between text-sm mb-1 font-mono">
+                                        <span>Đã dùng: 70%</span>
+                                        <span>Ngân sách tháng</span>
+                                    </div>
+                                    <div class="w-full bg-slate-700 rounded-full h-3 mb-2">
+                                        <div class="bg-red-500 h-3 rounded-full" style="width: 70%"></div>
+                                    </div>
+                                    <p class="text-xs text-red-400 font-semibold"><i
+                                            class="fas fa-exclamation-triangle mr-1"></i> Dự báo: Hết ngân sách ngày 22
+                                        nếu giữ tốc độ hiện tại.</p>
+                                </div>
+                            </div>
+
+                            <div class="md:col-span-5">
+                                <h5 class="text-sm text-slate-400 mb-3 uppercase font-bold tracking-wider">Phân tích
+                                    nhanh bằng AI</h5>
+                                <div
+                                    class="bg-slate-800 p-5 rounded-lg text-sm leading-relaxed space-y-4 border border-slate-700 h-full">
+                                    <p><strong class="text-green-400">✅ Lookalike vượt mục tiêu:</strong> Nên rót thêm
+                                        30% ngân sách từ Cold sang đây ngay.</p>
+                                    <p><strong class="text-red-400">🔴 Cảnh báo KPI:</strong> Campaign Cold đang lỗ nặng
+                                        so với mốc 2.0, cần tắt ngay để bảo toàn ngân sách.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Block 3 -->
+                    <div id="cta-block-3" class="mt-8 p-6 bg-orange-50 rounded-xl border border-orange-200 cta-block">
+                        <p class="mb-4 text-gray-800"><strong class="text-mindx-orange">💡 Bạn vừa thấy dữ liệu thô biến
+                                thành dashboard và insight trong 10 giây.</strong> Để tự xây hệ thống kết nối Google
+                            Sheets, tự động cập nhật và báo cáo tự động, bạn cần học cách thiết kế AI Workflow.</p>
+                        <p class="font-bold mb-2">Trong chương trình, bạn sẽ học:</p>
+                        <ul class="space-y-2 mb-6 text-gray-700 text-sm md:text-base">
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Tự động tạo báo cáo hiệu quả
+                                FB/Google Ads từ dữ liệu thô.</li>
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Viết content đa kênh (Facebook,
+                                TikTok, Email) chỉ từ 1 brief gốc — nhanh gấp 10 lần.</li>
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Xây lịch content 1 tháng và
+                                brief creative trong 30 phút bằng AI.</li>
+                        </ul>
+                        <div class="text-center">
+                            <button onclick="openModal()"
+                                class="inline-block bg-mindx-red text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition shadow-md font-title text-lg">
+                                → KHÁM PHÁ CHƯƠNG TRÌNH NGAY
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- TAB 4: TÀI CHÍNH / KẾ TOÁN (Màu Xanh lá) -->
+        <!-- ============================================== -->
+        <div id="tab-fin" class="tab-content">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-8 border-t-4 border-mindx-green">
+                <div class="p-6 md:p-8">
+
+                    <div
+                        class="mb-4 bg-green-50 p-4 rounded-lg border border-green-100 text-green-900 italic text-sm md:text-base">
+                        "Mất hàng giờ làm sạch file Excel thủ công? Báo cáo định kỳ tốn 1–2 ngày mỗi tháng?"
+                    </div>
+
+                    <div class="flex items-center gap-3 mb-4 mt-6">
+                        <span class="bg-mindx-green text-white px-3 py-1 rounded-full text-sm font-bold">Demo 4</span>
+                        <h3 class="text-2xl font-bold font-title text-mindx-green">Từ Sao Kê "Bẩn" → Báo Cáo Dòng Tiền
+                            Tự Động</h3>
+                    </div>
+
+                    <div class="grid md:grid-cols-12 gap-8 items-start">
+                        <!-- Input -->
+                        <div class="md:col-span-6 bg-gray-50 p-5 rounded-xl border border-gray-200">
+                            <h4 class="font-bold mb-3 text-gray-800 text-sm">Bước 1: Dữ liệu thô đúng như xuất từ ngân
+                                hàng</h4>
+                            <div class="table-container overflow-x-auto bg-white border mb-4 shadow-sm rounded">
+                                <table class="min-w-full text-xs text-left font-mono">
+                                    <thead class="bg-red-50 text-red-800 border-b border-red-200">
+                                        <tr>
+                                            <th class="p-2 border-r">Ngày GD</th>
+                                            <th class="p-2 border-r">Nội dung (Raw)</th>
+                                            <th class="p-2 text-right">Số tiền</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-gray-600">
+                                        <tr class="border-b">
+                                            <td class="p-2 border-r">01/05</td>
+                                            <td class="p-2 border-r">CK THANH TOAN TIEN MANG FPT THANG 4</td>
+                                            <td class="p-2 text-red-500 text-right">- 550,000</td>
+                                        </tr>
+                                        <tr class="border-b">
+                                            <td class="p-2 border-r">02-05</td>
+                                            <td class="p-2 border-r">nguyen van a ck tien coc mua hang</td>
+                                            <td class="p-2 text-green-600 text-right">+ 2,000,000</td>
+                                        </tr>
+                                        <tr class="border-b">
+                                            <td class="p-2 border-r">05/05/2026</td>
+                                            <td class="p-2 border-r">TRU TIEN THUE NHA THANG 5/2026</td>
+                                            <td class="p-2 text-red-500 text-right">- 15.000.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-2 border-r">06/05</td>
+                                            <td class="p-2 border-r">cty tnhh abc thanh toan hoa don so 123</td>
+                                            <td class="p-2 text-green-600 text-right">+ 24,500,000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="mb-4 bg-white p-3 border border-mindx-green rounded shadow-sm">
+                                <label class="block text-sm font-bold mb-2">"Dạy" AI 1 quy tắc của riêng bạn:</label>
+                                <div class="bg-green-50 p-2 text-sm text-green-800 rounded">
+                                    Nếu nội dung có chữ <strong>FPT</strong> ➔ Nhóm vào mục <strong>Chi phí Viễn
+                                        thông</strong>
+                                </div>
+                            </div>
+
+                            <button onclick="runSim(this, 'result-fin-1')"
+                                class="w-full bg-mindx-green text-white font-bold py-4 rounded-lg hover:bg-green-700 transition flex items-center justify-center shadow-lg transform hover:-translate-y-1">
+                                <i class="fas fa-magic mr-2"></i> AI chuẩn hóa & Áp dụng quy tắc
+                            </button>
+                        </div>
+
+                        <!-- Output -->
+                        <div id="result-fin-1" class="md:col-span-6 hidden flex-col justify-center">
+                            <h4 class="font-bold mb-3 text-mindx-green text-sm">Bước 2: Kết quả tự động</h4>
+
+                            <div
+                                class="table-container overflow-x-auto bg-white border border-green-200 rounded shadow-sm mb-4">
+                                <table class="min-w-full text-xs text-left">
+                                    <thead class="bg-green-50 text-green-800 border-b border-green-200">
+                                        <tr>
+                                            <th class="p-2">Ngày (Chuẩn)</th>
+                                            <th class="p-2">Hạng mục (AI gán nhãn)</th>
+                                            <th class="p-2 text-right">Thu</th>
+                                            <th class="p-2 text-right">Chi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-gray-800 font-medium">
+                                        <tr class="border-b">
+                                            <td class="p-2">01/05/2026</td>
+                                            <td
+                                                class="p-2 font-bold text-mindx-orange border-l-2 border-mindx-orange bg-orange-50">
+                                                Chi phí Viễn thông (AI học theo lệnh)</td>
+                                            <td class="p-2 text-right">-</td>
+                                            <td class="p-2 text-right text-red-600">550.000đ</td>
+                                        </tr>
+                                        <tr class="border-b">
+                                            <td class="p-2">02/05/2026</td>
+                                            <td class="p-2 text-blue-700">Doanh thu bán lẻ</td>
+                                            <td class="p-2 text-right text-green-600">2.000.000đ</td>
+                                            <td class="p-2 text-right">-</td>
+                                        </tr>
+                                        <tr class="border-b">
+                                            <td class="p-2">05/05/2026</td>
+                                            <td class="p-2 text-blue-700">Chi phí cố định (Mặt bằng)</td>
+                                            <td class="p-2 text-right">-</td>
+                                            <td class="p-2 text-right text-red-600">15.000.000đ</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-2">06/05/2026</td>
+                                            <td class="p-2 text-blue-700">Doanh thu B2B</td>
+                                            <td class="p-2 text-right text-green-600">24.500.000đ</td>
+                                            <td class="p-2 text-right">-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div
+                                class="bg-green-50 border border-green-200 p-4 rounded-lg text-sm text-gray-800 space-y-2">
+                                <p><strong class="text-green-700">✅ Tổng quan:</strong> Tổng thu 26,5tr — Tổng chi
+                                    15,55tr. <strong>Dòng tiền dương ~11tr.</strong></p>
+                                <p><strong class="text-yellow-600">📊 Phân tích:</strong> Chi phí cố định chiếm tới 96%
+                                    tổng chi phí tuần đầu.</p>
+                                <p><strong class="text-blue-700">💡 Khuyến nghị:</strong> Dòng thu B2B là nguồn chính,
+                                    cần theo dõi sát công nợ.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Block 4 -->
+                    <div id="cta-block-4" class="mt-8 p-6 bg-green-50 rounded-xl border border-green-200 cta-block">
+                        <p class="mb-4 text-gray-800"><strong class="text-mindx-green">💡 Bạn vừa thấy AI học quy tắc
+                                gán nhãn của riêng bạn và áp dụng ngay lập tức.</strong> Để xây bộ quy tắc hoàn chỉnh xử
+                            lý Excel hàng nghìn dòng, bạn cần học cách viết Rule-Based Prompt.</p>
+                        <p class="font-bold mb-2">Trong chương trình, bạn sẽ học:</p>
+                        <ul class="space-y-2 mb-6 text-gray-700 text-sm md:text-base">
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Dùng AI làm sạch và phân loại dữ
+                                liệu kế toán hàng nghìn dòng — 1 lần thiết lập, dùng mãi.</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Tự động tạo báo cáo tài chính
+                                hàng tháng từ file sao kê thô.</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Xây công thức Excel thông minh
+                                với AI — không cần biết code hay hàm phức tạp.</li>
+                        </ul>
+                        <div class="text-center">
+                            <button onclick="openModal()"
+                                class="inline-block bg-mindx-red text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition shadow-md font-title text-lg">
+                                → KHÁM PHÁ CHƯƠNG TRÌNH NGAY
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- TAB 5: QUẢN LÝ / CHỦ DOANH NGHIỆP (Màu Đỏ đô/Xám đậm) -->
+        <!-- ============================================== -->
+        <div id="tab-mgr" class="tab-content">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-8 border-t-4 border-gray-800">
+                <div class="p-6 md:p-8">
+
+                    <div
+                        class="mb-4 bg-gray-100 p-4 rounded-lg border border-gray-300 text-gray-900 italic text-sm md:text-base">
+                        "Chi phí nhân sự cao, quy trình phòng ban thủ công lặp lại, muốn xây hệ thống AI tự vận hành?"
+                    </div>
+
+                    <!-- KỊCH BẢN 5A -->
+                    <div class="mb-12 border-b border-gray-200 pb-10">
+                        <div class="flex items-center gap-3 mb-4 mt-6">
+                            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-bold">Demo 5A</span>
+                            <h3 class="text-2xl font-bold font-title text-gray-800">Chẩn Đoán: Phòng Ban Đang Ở Level AI
+                                Nào?</h3>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                                <h4 class="font-bold mb-4">Trả lời 5 câu hỏi nhanh:</h4>
+                                <div class="space-y-3 text-sm text-gray-700 mb-6">
+                                    <label class="flex items-start gap-2 cursor-pointer hover:bg-white p-2 rounded">
+                                        <input type="checkbox"
+                                            class="mt-1 w-4 h-4 text-mindx-red focus:ring-mindx-red border-gray-300 rounded"
+                                            checked>
+                                        <span>Phòng ban có quy trình nào lặp lại >3 lần/tuần không?</span>
+                                    </label>
+                                    <label class="flex items-start gap-2 cursor-pointer hover:bg-white p-2 rounded">
+                                        <input type="checkbox"
+                                            class="mt-1 w-4 h-4 text-mindx-red focus:ring-mindx-red border-gray-300 rounded">
+                                        <span>Kết quả công việc có được lưu có cấu trúc không?</span>
+                                    </label>
+                                    <label class="flex items-start gap-2 cursor-pointer hover:bg-white p-2 rounded">
+                                        <input type="checkbox"
+                                            class="mt-1 w-4 h-4 text-mindx-red focus:ring-mindx-red border-gray-300 rounded"
+                                            checked>
+                                        <span>Hiện tại có ai trong team đang dùng AI không?</span>
+                                    </label>
+                                    <label class="flex items-start gap-2 cursor-pointer hover:bg-white p-2 rounded">
+                                        <input type="checkbox"
+                                            class="mt-1 w-4 h-4 text-mindx-red focus:ring-mindx-red border-gray-300 rounded">
+                                        <span>Có việc tốn >2h chỉ để chuyển Data từ A sang B?</span>
+                                    </label>
+                                    <label class="flex items-start gap-2 cursor-pointer hover:bg-white p-2 rounded">
+                                        <input type="checkbox"
+                                            class="mt-1 w-4 h-4 text-mindx-red focus:ring-mindx-red border-gray-300 rounded">
+                                        <span>Từng thử tự động hóa bằng AI nhưng chưa thành công?</span>
+                                    </label>
+                                </div>
+                                <button onclick="runDiagnostics(this)"
+                                    class="w-full bg-gray-800 text-white font-bold py-3 rounded-lg hover:bg-black transition flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-stethoscope mr-2"></i> Chẩn đoán Level AI
+                                </button>
+                            </div>
+
+                            <div id="result-mgr-2" class="hidden h-full">
+                                <div
+                                    class="bg-white border rounded-xl shadow-lg p-6 h-full flex flex-col justify-center text-center">
+                                    <div id="demo5b-level-badge"
+                                        class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-yellow-400">
+                                        <span id="demo5b-level-text"
+                                            class="text-3xl font-bold font-title text-yellow-600">LV1</span>
+                                    </div>
+                                    <h4 id="demo5b-level-title" class="text-xl font-bold mb-2">Level 1: Dùng ChatGPT rời
+                                        rạc</h4>
+                                    <p id="demo5b-level-desc" class="text-gray-600 italic mb-4">"Bạn đang dùng AI như
+                                        một công cụ Google Search nâng cao."</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Block 5A -->
+                        <div id="cta-block-5a"
+                            class="mt-8 p-6 bg-indigo-50 rounded-xl border border-indigo-200 cta-block">
+                            <p class="mb-4 text-gray-800"><strong class="text-indigo-800">💡 Bạn vừa biết mình đang ở
+                                    Level nào trong hành trình AI.</strong> Dù bắt đầu từ Level 0 hay Level 2, chương
+                                trình sẽ đưa bạn đến Level vận hành thực tế.</p>
+                            <p class="font-bold mb-2">Trong chương trình, bạn sẽ học:</p>
+                            <ul class="space-y-2 mb-6 text-gray-700 text-sm md:text-base">
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Xây lộ trình triển khai AI
+                                    cá nhân hóa theo quy mô công ty.</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Tự động hóa 3–5 quy trình
+                                    đầu tiên ngay trong khóa học.</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Đánh giá ROI và thuyết phục
+                                    ban lãnh đạo đầu tư bằng số liệu.</li>
+                            </ul>
+                            <div class="text-center">
+                                <button onclick="openModal()"
+                                    class="inline-block bg-mindx-red text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition shadow-md font-title text-lg">
+                                    → KHÁM PHÁ CHƯƠNG TRÌNH NGAY
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KỊCH BẢN 5B -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-bold">Demo 5B</span>
+                            <h3 class="text-2xl font-bold font-title text-gray-800">Xem AI Tự Điều Phối Quy Trình Phòng
+                                Ban</h3>
+                        </div>
+
+                        <div
+                            class="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6 text-center max-w-3xl mx-auto">
+                            <h4 class="font-bold mb-4 text-lg">Chọn 1 quy trình phòng ban:</h4>
+                            <div class="flex flex-wrap justify-center gap-3 mb-6">
+                                <button onclick="runSim(this, 'result-mgr-1', 'gray-800', 'Tuyển dụng & Sàng lọc')"
+                                    class="bg-white border border-gray-300 px-4 py-2 rounded-lg hover:border-gray-800 hover:shadow-md transition text-sm">📋
+                                    Tuyển dụng</button>
+                                <button onclick="runSim(this, 'result-mgr-1', 'gray-800', 'Chăm sóc khách hàng')"
+                                    class="bg-white border border-gray-300 px-4 py-2 rounded-lg hover:border-gray-800 hover:shadow-md transition text-sm">💬
+                                    CSKH tự động</button>
+                                <button onclick="runSim(this, 'result-mgr-1', 'gray-800', 'Báo cáo định kỳ')"
+                                    class="bg-white border border-gray-300 px-4 py-2 rounded-lg hover:border-gray-800 hover:shadow-md transition text-sm">📊
+                                    Báo cáo tuần</button>
+                                <button onclick="runSim(this, 'result-mgr-1', 'gray-800', 'Onboarding Nhân viên mới')"
+                                    class="bg-white border border-gray-300 px-4 py-2 rounded-lg hover:border-gray-800 hover:shadow-md transition text-sm">🎓
+                                    Onboarding</button>
+                            </div>
+                        </div>
+
+                        <!-- Output 5B -->
+                        <div id="result-mgr-1" class="hidden">
+                            <div class="bg-gradient-to-r from-gray-800 to-gray-600 rounded-xl p-6 text-white mb-6">
+                                <h4 class="font-bold text-center mb-6 text-xl">Sơ đồ luồng tự động: <span
+                                        id="mgr-process-name" class="text-mindx-orange uppercase">Quy trình</span></h4>
+                                <div id="demo5a-diagram"
+                                    class="flex flex-col md:flex-row items-center justify-between gap-4 text-center">
+                                    <div
+                                        class="bg-gray-700 p-4 rounded-lg w-full md:w-1/3 border border-gray-500 shadow-inner">
+                                        <div
+                                            class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                            <i class="fas fa-inbox"></i>
+                                        </div>
+                                        <p class="font-bold text-sm">Agent 1: Thu thập</p>
+                                        <p class="text-xs text-gray-300 mt-1">Lấy dữ liệu thô tự động từ Email/Form/API
+                                        </p>
+                                    </div>
+                                    <div class="hidden md:block text-gray-400"><i
+                                            class="fas fa-chevron-right text-2xl"></i></div>
+                                    <div class="text-gray-400 md:hidden"><i class="fas fa-chevron-down text-2xl"></i>
+                                    </div>
+                                    <div
+                                        class="bg-gray-700 p-4 rounded-lg w-full md:w-1/3 border border-gray-500 shadow-inner">
+                                        <div
+                                            class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                            <i class="fas fa-brain"></i>
+                                        </div>
+                                        <p class="font-bold text-sm">Agent 2: Xử lý & Phân tích</p>
+                                        <p class="text-xs text-gray-300 mt-1">LLM đọc, đánh giá, phân loại và ra quyết
+                                            định</p>
+                                    </div>
+                                    <div class="hidden md:block text-gray-400"><i
+                                            class="fas fa-chevron-right text-2xl"></i></div>
+                                    <div class="text-gray-400 md:hidden"><i class="fas fa-chevron-down text-2xl"></i>
+                                    </div>
+                                    <div
+                                        class="bg-gray-700 p-4 rounded-lg w-full md:w-1/3 border border-gray-500 shadow-inner">
+                                        <div
+                                            class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                            <i class="fas fa-paper-plane"></i>
+                                        </div>
+                                        <p class="font-bold text-sm">Agent 3: Phản hồi</p>
+                                        <p class="text-xs text-gray-300 mt-1">Kích hoạt Action (Gửi mail, cập nhật CRM)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-container overflow-x-auto bg-white rounded-lg border">
+                                <table class="min-w-full text-sm text-left">
+                                    <thead class="bg-gray-100 text-gray-700">
+                                        <tr>
+                                            <th class="px-4 py-3 border-r">Chỉ tiêu</th>
+                                            <th class="px-4 py-3 border-r text-red-600">Quy trình thủ công</th>
+                                            <th class="px-4 py-3 text-green-700 font-bold">Với Agentic Workspace</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y text-gray-700">
+                                        <tr>
+                                            <td class="px-4 py-3 font-bold border-r">Thời gian</td>
+                                            <td class="px-4 py-3 border-r">8 giờ / tuần</td>
+                                            <td class="px-4 py-3 text-green-700 font-bold bg-green-50">20 phút kiểm
+                                                duyệt / tuần</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-3 font-bold border-r">Người thực hiện</td>
+                                            <td class="px-4 py-3 border-r">Nhân sự thủ công</td>
+                                            <td class="px-4 py-3 bg-green-50">AI Agent tự động (chạy ngầm 24/7)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-3 font-bold border-r">Sai sót</td>
+                                            <td class="px-4 py-3 border-r">Phụ thuộc người làm</td>
+                                            <td class="px-4 py-3 bg-green-50">Có quy tắc kiểm duyệt, chuẩn 100%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- CTA Block 5B -->
+                        <div id="cta-block-5b"
+                            class="mt-8 p-6 bg-indigo-50 rounded-xl border border-indigo-200 cta-block">
+                            <p class="mb-4 text-gray-800"><strong class="text-indigo-800">💡 Bạn vừa xem quy trình được
+                                    điều phối tự động.</strong> Để tự xây hệ thống này, bạn cần nắm tư duy OIPO và kỹ
+                                năng xây Agentic Workspace.</p>
+                            <p class="font-bold mb-2">Trong chương trình, bạn sẽ học:</p>
+                            <ul class="space-y-2 mb-6 text-gray-700 text-sm md:text-base">
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Thiết kế và triển khai
+                                    Agentic Workflow cho phòng ban — không cần code.</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Tự động hóa báo cáo, CSKH,
+                                    xử lý tài liệu — AI thay thế nhân sự chạy 24/7.</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Đo lường hiệu quả, giảm chi
+                                    phí vận hành, tăng năng suất.</li>
+                            </ul>
+                            <div class="text-center">
+                                <button onclick="openModal()"
+                                    class="inline-block bg-mindx-red text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition shadow-md font-title text-lg">
+                                    → KHÁM PHÁ CHƯƠNG TRÌNH NGAY
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Popup Đăng Ký (Modal) -->
+    <div id="register-modal"
+        class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="bg-white w-full max-w-md mx-4 rounded-2xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300"
+            id="modal-content">
+            <div class="bg-mindx-navy p-5 text-white flex justify-between items-center">
+                <h3 class="text-xl font-bold font-title">Đăng ký tư vấn chương trình</h3>
+                <button onclick="closeModal()" class="text-blue-200 hover:text-white transition">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <form onsubmit="submitForm(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-1">Họ và tên *</label>
+                        <input type="text" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mindx-navy outline-none"
+                            placeholder="Nhập họ tên của bạn">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-1">Số điện thoại *</label>
+                        <input type="tel" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mindx-navy outline-none"
+                            placeholder="Nhập số điện thoại">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-1">Địa chỉ Email *</label>
+                        <input type="email" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mindx-navy outline-none"
+                            placeholder="Nhập email">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-1">Khu vực *</label>
+                        <select required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mindx-navy outline-none text-gray-700">
+                            <option value="">Chọn khu vực</option>
+                            <option>Hà Nội</option>
+                            <option>TP.HCM</option>
+                            <option>Tỉnh thành khác</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-1">Bộ phận / Ngành nghề *</label>
+                        <select required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mindx-navy outline-none text-gray-700">
+                            <option value="">Chọn nhóm đối tượng</option>
+                            <option>Sinh viên / Fresher</option>
+                            <option>Nhân sự (HR)</option>
+                            <option>Marketing / Sales</option>
+                            <option>Tài chính / Kế toán</option>
+                            <option>Chủ doanh nghiệp / Quản lý</option>
+                            <option>Khác</option>
+                        </select>
+                    </div>
+                    <div class="pt-2">
+                        <button type="submit"
+                            class="w-full bg-mindx-red text-white font-bold py-3 rounded-lg hover:bg-red-700 transition shadow text-lg uppercase tracking-wider">
+                            Đăng ký ngay
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function highlightCta(targetId) {
+            const map = {
+                'result-sv-1': { id: 'cta-block-1a', cls: 'cta-active-sv' },
+                'result-sv-2': { id: 'cta-block-1b', cls: 'cta-active-sv' },
+                'result-hr-1': { id: 'cta-block-2a', cls: 'cta-active-hr' },
+                'result-hr-2': { id: 'cta-block-2b', cls: 'cta-active-hr' },
+                'result-mkt-3a': { id: 'cta-block-3a', cls: 'cta-active-mkt' },
+                'result-mkt-1': { id: 'cta-block-3', cls: 'cta-active-mkt' },
+                'result-fin-1': { id: 'cta-block-4', cls: 'cta-active-fin' },
+                'result-mgr-1': { id: 'cta-block-5b', cls: 'cta-active-mgr' },
+                'result-mgr-2': { id: 'cta-block-5a', cls: 'cta-active-mgr' }
+            };
+            const config = map[targetId];
+            if (config) {
+                const block = document.getElementById(config.id);
+                if (block) {
+                    block.classList.add(config.cls);
+                    block.classList.add('cta-active-base');
+                }
+            }
+        }
+
+        // Chuyển Tab
+        function openTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active', 'text-white', 'bg-mindx-navy');
+                if (btn.id === 'btn-tab-sv') { btn.className = "tab-btn px-6 py-3 rounded-full font-bold text-mindx-navy bg-white border-2 border-mindx-navy hover:bg-blue-50 transition transform hover:scale-105"; }
+                if (btn.id === 'btn-tab-hr') { btn.className = "tab-btn px-6 py-3 rounded-full font-bold text-mindx-navy bg-white border-2 border-mindx-navy hover:bg-blue-50 transition transform hover:scale-105"; }
+                if (btn.id === 'btn-tab-mkt') { btn.className = "tab-btn px-6 py-3 rounded-full font-bold text-mindx-orange bg-white border-2 border-mindx-orange hover:bg-orange-50 transition transform hover:scale-105"; }
+                if (btn.id === 'btn-tab-fin') { btn.className = "tab-btn px-6 py-3 rounded-full font-bold text-mindx-green bg-white border-2 border-mindx-green hover:bg-green-50 transition transform hover:scale-105"; }
+                if (btn.id === 'btn-tab-mgr') { btn.className = "tab-btn px-6 py-3 rounded-full font-bold text-mindx-red bg-white border-2 border-mindx-red hover:bg-red-50 transition transform hover:scale-105"; }
+            });
+
+            document.getElementById(tabId).classList.add('active');
+
+            const activeBtn = document.getElementById('btn-tab-' + tabId.replace('tab-', ''));
+            let bgColorClass = 'bg-mindx-navy';
+            if (tabId === 'tab-hr') bgColorClass = 'bg-mindx-navy';
+            if (tabId === 'tab-mkt') bgColorClass = 'bg-mindx-orange';
+            if (tabId === 'tab-fin') bgColorClass = 'bg-mindx-green';
+            if (tabId === 'tab-mgr') bgColorClass = 'bg-mindx-red';
+
+            activeBtn.className = `tab-btn active px-6 py-3 rounded-full font-bold text-white ${bgColorClass} shadow-md transition transform hover:scale-105 border-2 border-transparent`;
+        }
+
+        // Mô phỏng AI
+        function runSim(buttonEl, resultId, colorTheme, optionalData = null) {
+            const originalContent = buttonEl.innerHTML;
+            const originalClass = buttonEl.className;
+
+            buttonEl.innerHTML = `<div class="loader loader-sm" style="border-top-color: transparent;"></div> Đang xử lý...`;
+            buttonEl.classList.add('opacity-80', 'cursor-not-allowed');
+            buttonEl.disabled = true;
+
+            const resultEl = document.getElementById(resultId);
+            resultEl.classList.add('hidden');
+            resultEl.classList.remove('flex');
+
+            if (optionalData && document.getElementById('mgr-process-name') && resultId === 'result-mgr-1') {
+                document.getElementById('mgr-process-name').innerText = optionalData;
+                const diagramContainer = document.getElementById('demo5a-diagram');
+                if (diagramContainer) {
+                    let agent1Title, agent1Desc, agent1Icon;
+                    let agent2Title, agent2Desc, agent2Icon;
+                    let agent3Title, agent3Desc, agent3Icon;
+
+                    if (optionalData.includes('Tuyển dụng')) {
+                        agent1Icon = 'fa-file-pdf'; agent1Title = 'Agent 1: Lọc CV'; agent1Desc = 'Đọc và chấm điểm CV tự động theo JD';
+                        agent2Icon = 'fa-calendar-check'; agent2Title = 'Agent 2: Lên lịch'; agent2Desc = 'So sánh lịch trống và hẹn phỏng vấn';
+                        agent3Icon = 'fa-envelope-open-text'; agent3Title = 'Agent 3: Gửi Mail'; agent3Desc = 'Gửi email xác nhận cho ứng viên và báo NS';
+                    } else if (optionalData.includes('Chăm sóc khách hàng')) {
+                        agent1Icon = 'fa-comments'; agent1Title = 'Agent 1: Phân loại'; agent1Desc = 'Đọc tin nhắn để biết là Khiếu nại hay Sale';
+                        agent2Icon = 'fa-robot'; agent2Title = 'Agent 2: Phản hồi'; agent2Desc = 'Tạo câu trả lời cá nhân hóa theo CSDL';
+                        agent3Icon = 'fa-ticket-alt'; agent3Title = 'Agent 3: Lập Ticket'; agent3Desc = 'Đẩy ticket lên hệ thống cho CSKH con người';
+                    } else if (optionalData.includes('Báo cáo định kỳ')) {
+                        agent1Icon = 'fa-database'; agent1Title = 'Agent 1: Rút Data'; agent1Desc = 'Tự động lấy dữ liệu từ CRM và Excel';
+                        agent2Icon = 'fa-chart-pie'; agent2Title = 'Agent 2: Phân tích'; agent2Desc = 'Pivot table, tính tỷ lệ và tạo biểu đồ';
+                        agent3Icon = 'fa-paper-plane'; agent3Title = 'Agent 3: Gửi Sếp'; agent3Desc = 'Soạn báo cáo tóm tắt và gửi qua Zalo/Email';
+                    } else if (optionalData.includes('Onboarding')) {
+                        agent1Icon = 'fa-user-plus'; agent1Title = 'Agent 1: Chào mừng'; agent1Desc = 'Tự động gửi email chào mừng NS mới';
+                        agent2Icon = 'fa-book'; agent2Title = 'Agent 2: Gửi tài liệu'; agent2Desc = 'Gửi chuỗi Nội quy và Hướng dẫn đào tạo';
+                        agent3Icon = 'fa-clipboard-check'; agent3Title = 'Agent 3: Chấm điểm'; agent3Desc = 'Cho NS làm Quiz và tự động chấm điểm hội nhập';
+                    } else {
+                        agent1Icon = 'fa-inbox'; agent1Title = 'Agent 1: Thu thập'; agent1Desc = 'Lấy dữ liệu thô tự động từ Email/Form/API';
+                        agent2Icon = 'fa-brain'; agent2Title = 'Agent 2: Xử lý'; agent2Desc = 'LLM đọc, đánh giá, phân loại và ra quyết định';
+                        agent3Icon = 'fa-paper-plane'; agent3Title = 'Agent 3: Phản hồi'; agent3Desc = 'Kích hoạt Action (Gửi mail, cập nhật CRM)';
+                    }
+
+                    diagramContainer.innerHTML = `
+                        <div class="bg-gray-700 p-4 rounded-lg w-full md:w-1/3 border border-gray-500 shadow-inner">
+                            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas ${agent1Icon}"></i>
+                            </div>
+                            <p class="font-bold text-sm">${agent1Title}</p>
+                            <p class="text-xs text-gray-300 mt-1">${agent1Desc}</p>
+                        </div>
+                        <div class="hidden md:block text-gray-400"><i class="fas fa-chevron-right text-2xl"></i></div>
+                        <div class="text-gray-400 md:hidden"><i class="fas fa-chevron-down text-2xl"></i></div>
+                        <div class="bg-gray-700 p-4 rounded-lg w-full md:w-1/3 border border-gray-500 shadow-inner">
+                            <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas ${agent2Icon}"></i>
+                            </div>
+                            <p class="font-bold text-sm">${agent2Title}</p>
+                            <p class="text-xs text-gray-300 mt-1">${agent2Desc}</p>
+                        </div>
+                        <div class="hidden md:block text-gray-400"><i class="fas fa-chevron-right text-2xl"></i></div>
+                        <div class="text-gray-400 md:hidden"><i class="fas fa-chevron-down text-2xl"></i></div>
+                        <div class="bg-gray-700 p-4 rounded-lg w-full md:w-1/3 border border-gray-500 shadow-inner">
+                            <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas ${agent3Icon}"></i>
+                            </div>
+                            <p class="font-bold text-sm">${agent3Title}</p>
+                            <p class="text-xs text-gray-300 mt-1">${agent3Desc}</p>
+                        </div>
+                    `;
+                }
+            }
+
+            setTimeout(() => {
+                buttonEl.innerHTML = `<i class="fas fa-check mr-2"></i> Đã hoàn thành`;
+                buttonEl.classList.remove('opacity-80', 'cursor-not-allowed');
+                buttonEl.disabled = false;
+
+                buttonEl.classList.add('bg-green-600', 'border-transparent');
+
+                if (resultEl.classList.contains('flex-col')) {
+                    resultEl.classList.remove('hidden');
+                    resultEl.classList.add('flex');
+                } else {
+                    resultEl.classList.remove('hidden');
+                    resultEl.classList.add('block');
+                }
+
+                highlightCta(resultId);
+
+                setTimeout(() => {
+                    buttonEl.innerHTML = originalContent;
+                    buttonEl.className = originalClass;
+                }, 3500);
+
+            }, 2000);
+        }
+
+        // Modal Logic
+        const modal = document.getElementById('register-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            // Timeout to allow display:block to apply before animating opacity/scale
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300); // Wait for transition
+        }
+
+        // Đóng modal khi click ra ngoài form
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Hàm xử lý Demo 2
+        function runHrSim(btn) {
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = `<div class="loader loader-sm" style="border-top-color: transparent;"></div> Đang viết JD...`;
+            btn.classList.add('opacity-80', 'cursor-not-allowed');
+            btn.disabled = true;
+
+            const resultEl = document.getElementById('result-hr-2');
+            resultEl.classList.add('hidden');
+            resultEl.classList.remove('flex');
+
+            const jobTitle = document.getElementById('select-hr-job').value;
+            const reqText = document.getElementById('input-hr-req').value;
+
+            // Format the user's requirements text into HTML lines
+            const reqLines = reqText.split('\n').filter(line => line.trim() !== '').map(line => line.trim() + '<br>').join('');
+
+            setTimeout(() => {
+                btn.innerHTML = `<i class="fas fa-check mr-2"></i> Đã hoàn thành`;
+                btn.classList.remove('opacity-80', 'cursor-not-allowed');
+                btn.disabled = false;
+
+                let jobObjective = '';
+                let jobDesc = '';
+                let jobFileName = '';
+
+                if (jobTitle.includes('Digital Marketing')) {
+                    jobObjective = 'Lập kế hoạch, triển khai và tối ưu hóa các chiến dịch quảng cáo kỹ thuật số nhằm mang lại Lead chất lượng.';
+                    jobDesc = '- Vận hành trực tiếp chiến dịch trên Facebook Ads, Google Ads.<br>- Theo dõi, đánh giá các chỉ số quan trọng (CPA, ROAS, CVR)...<br>- Nghiên cứu insight khách hàng và tối ưu A/B testing.';
+                    jobFileName = 'Job_Description_D_MKT.docx';
+                } else if (jobTitle.includes('Kế toán')) {
+                    jobObjective = 'Quản lý thu chi nội bộ, đối soát hóa đơn và lập báo cáo tài chính hàng tháng.';
+                    jobDesc = '- Theo dõi dòng tiền, thu chi nội bộ hàng ngày.<br>- Kiểm tra, đối soát hóa đơn chứng từ hợp lệ.<br>- Làm việc với ngân hàng và cơ quan thuế khi cần thiết.';
+                    jobFileName = 'Job_Description_KeToan.docx';
+                } else {
+                    jobObjective = 'Tìm kiếm, thu hút và tuyển dụng nhân tài phù hợp với định hướng phát triển của công ty.';
+                    jobDesc = '- Đăng tuyển, lọc CV và xếp lịch phỏng vấn.<br>- Xây dựng nguồn ứng viên (Talent pool).<br>- Phối hợp với các phòng ban để đánh giá ứng viên.';
+                    jobFileName = 'Job_Description_TA.docx';
+                }
+
+                document.getElementById('hr-jd-filename').innerHTML = `<i class="fas fa-file-word text-blue-600 mr-1"></i> ${jobFileName}`;
+
+                document.getElementById('output-hr-jd').innerHTML = `
+                    <h1 class="text-lg font-bold text-center text-mindx-red uppercase">Mô tả công việc: ${jobTitle}</h1>
+                    <p><strong>I. MỤC TIÊU:</strong> ${jobObjective}</p>
+                    <p><strong>II. MÔ TẢ CÔNG VIỆC:</strong><br>${jobDesc}</p>
+                    <p><strong>III. YÊU CẦU ỨNG VIÊN:</strong><br>${reqLines || '<em>(Theo yêu cầu đã nhập)</em>'}</p>
+                    <p><strong>IV. QUYỀN LỢI:</strong><br>- Lương cứng + Thưởng KPI hấp dẫn.<br>- Chế độ BHXH đầy đủ theo quy định.<br>- Làm việc trong môi trường năng động, trẻ trung.</p>
+                `;
+
+                resultEl.classList.remove('hidden');
+                resultEl.classList.add('flex');
+                highlightCta('result-hr-2');
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                }, 3000);
+            }, 1500);
+        }
+
+        // Hàm xử lý Demo 3A (Content MKT)
+        function runContentSim(btn) {
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = `<div class="loader loader-sm" style="border-top-color: transparent;"></div> Đang quét Data & Phân tích...`;
+            btn.classList.add('opacity-80', 'cursor-not-allowed');
+            btn.disabled = true;
+
+            const resultEl = document.getElementById('result-mkt-3a');
+            resultEl.classList.add('hidden');
+            resultEl.classList.remove('flex');
+
+            setTimeout(() => {
+                btn.innerHTML = `<i class="fas fa-check mr-2"></i> Đã hoàn thành`;
+                btn.classList.remove('opacity-80', 'cursor-not-allowed');
+                btn.disabled = false;
+
+                resultEl.classList.remove('hidden');
+                resultEl.classList.add('flex');
+                highlightCta('result-mkt-3a');
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                }, 3000);
+            }, 1500);
+        }
+
+        // Hàm xử lý Demo 5B
+        function runDiagnostics(btn) {
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = `<div class="loader loader-sm" style="border-top-color: transparent;"></div> Đang chẩn đoán...`;
+            btn.classList.add('opacity-80', 'cursor-not-allowed');
+            btn.disabled = true;
+
+            const resultEl = document.getElementById('result-mgr-2');
+            resultEl.classList.add('hidden');
+            resultEl.classList.remove('flex');
+
+            // Đếm số lượng checkbox được chọn trong phần Demo 5B
+            const container = btn.parentElement;
+            const checkedCount = container.querySelectorAll('input[type="checkbox"]:checked').length;
+
+            setTimeout(() => {
+                btn.innerHTML = `<i class="fas fa-check mr-2"></i> Đã hoàn thành`;
+                btn.classList.remove('opacity-80', 'cursor-not-allowed');
+                btn.disabled = false;
+
+                const badge = document.getElementById('demo5b-level-badge');
+                const text = document.getElementById('demo5b-level-text');
+                const title = document.getElementById('demo5b-level-title');
+                const desc = document.getElementById('demo5b-level-desc');
+
+                if (checkedCount <= 1) {
+                    badge.className = "w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-gray-400";
+                    text.className = "text-3xl font-bold font-title text-gray-600";
+                    text.innerText = "LV0";
+                    title.innerText = "Level 0: Chưa áp dụng AI";
+                    desc.innerText = "Mọi thứ vẫn đang làm thủ công, tốn nhiều thời gian và dễ sai sót.";
+                } else if (checkedCount <= 3) {
+                    badge.className = "w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-yellow-400";
+                    text.className = "text-3xl font-bold font-title text-yellow-600";
+                    text.innerText = "LV1";
+                    title.innerText = "Level 1: Dùng ChatGPT rời rạc";
+                    desc.innerText = "Bạn đang dùng AI như một công cụ trợ lý cơ bản, chưa có luồng tự động.";
+                } else {
+                    badge.className = "w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-green-500";
+                    text.className = "text-3xl font-bold font-title text-green-600";
+                    text.innerText = "LV2";
+                    title.innerText = "Level 2: Sẵn sàng lên Agentic Workspace";
+                    desc.innerText = "Phòng ban của bạn hội đủ điều kiện để tự động hóa 80% luồng công việc bằng AI Agents.";
+                }
+
+                resultEl.classList.remove('hidden');
+                resultEl.classList.add('flex');
+                highlightCta('result-mgr-2');
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                }, 3000);
+            }, 1500);
+        }
+
+        // Xử lý Form Submit (Giả lập)
+        function submitForm(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+
+            btn.innerHTML = `<i class="fas fa-spinner fa-spin mr-2"></i> Đang gửi...`;
+            btn.disabled = true;
+            btn.classList.add('opacity-80');
+
+            setTimeout(() => {
+                btn.innerHTML = `<i class="fas fa-check-circle mr-2"></i> Gửi thành công!`;
+                btn.classList.replace('bg-mindx-red', 'bg-green-600');
+
+                setTimeout(() => {
+                    closeModal();
+                    e.target.reset(); // Reset form
+                    btn.innerHTML = originalText;
+                    btn.classList.replace('bg-green-600', 'bg-mindx-red');
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-80');
+                }, 2000);
+            }, 1500);
+        }
+    </script>
+</body>
+
+</html>
